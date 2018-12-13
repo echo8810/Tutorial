@@ -1,0 +1,87 @@
+class クラス名
+  def メソッド名
+  end
+end
+
+
+class Animal
+  def greet
+    print "こんにちは！アニマル"
+  end
+end
+
+
+#呼び出し
+x = Animal.new
+x.greet //こんにちは！アニマル
+
+
+##クラス変数
+class クラス名
+  @@クラス変数名
+end
+
+class Animal
+  @@counter = 0
+
+  def initialize
+    @@counter += 1
+  end
+
+  def self.get_counter
+    return @@counter
+  end
+end
+
+##呼び出し
+Animal.new
+Animal.get_counter //1
+
+Animal.new
+Animal.get_counter //2
+
+Animal.new
+Animal.get_counter //3
+
+
+###インスタンス変数
+class Animal
+
+  //セッター部
+  def name=(value)
+    @name = value
+  end
+
+  //ゲッター部
+  def name
+    @name
+  end
+
+end
+
+//セッターとゲッターによってAnimal.name だけで呼び出しができる
+//短縮して書くならば　attr_accessor を使用する
+
+class Animal
+  attr_accessor :name
+end
+
+これで上部クラスと同義になる。すごい
+
+###呼び出し
+
+y = Animal.new
+y.name = "さる"
+p y.name //さる
+
+z = Animal.new
+z.name = "ぞう"
+p z.name //ぞう
+
+
+＝＝＝＝＝＝
+クラス変数 @@x と　インスタンス変数　@y
+の違いは変数を共有する範囲にある。
+
+前者では、クラス内で変数を共有するため、クラス.new で呼び出した時同一の変数をさす
+後者では、インスタンス内これを行うため、おいた.new呼び出しごとに値が変わる
