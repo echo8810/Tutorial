@@ -1,3 +1,4 @@
+=begin
 require 'test_helper'
 
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
@@ -46,3 +47,4 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to microposts_url
   end
 end
+=end
